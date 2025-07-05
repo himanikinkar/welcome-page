@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Messages</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .normal-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .normal-btn:hover {
+      background-color: #45a049;
+    }
+
+    .friends-btn {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    .friends-btn:hover {
+      background-color: #e67e22;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 600px;
+      display: none;
+    }
+
+    .highlight {
+      color: #ffeb3b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="btn-container">
+    <button class="normal-btn" onclick="showMessage('normal')">Open Normal</button>
+    <button class="friends-btn" onclick="showMessage('friends')">Open Friends Version</button>
+  </div>
+
+  <div class="message-box" id="messageBox">
+    <!-- Message will be inserted here -->
+  </div>
+
+  <script>
+    function showMessage(type) {
+      const box = document.getElementById('messageBox');
+      box.style.display = 'block';
+
+      if (type === 'normal') {
+        box.innerHTML = '<h1>Welcome!</h1>';
+      } else if (type === 'friends') {
+        box.innerHTML = `<h1>
+          Welcome to the <span class="highlight">real world</span>!<br>
+          It sucks... <span class="highlight">you\'re gonna love it.</span>
+        </h1>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
